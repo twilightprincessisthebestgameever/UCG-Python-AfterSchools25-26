@@ -1,20 +1,19 @@
-# Mini Python program demonstrating lower(), upper(), and replace()
+# Program Description:
+# This program takes a word as input from the user and prints the word in reverse order.
+# It uses a while loop to iterate from the last character to the first.
 
-# Original string
-text = "Hello Class! Python is Fun."
+# Ask the user to enter a word
+s = input("Enter a word: ")
+rev = ""
 
-# Convert the string to all lowercase
-lower_text = text.lower()
-print("Lowercase:", lower_text)
+# Start index at the last character of the string (len(s) - 1)
+i = len(s) - 1
 
-# Convert the string to all uppercase
-upper_text = text.upper()
-print("Uppercase:", upper_text)
+# Loop while index is greater than or equal to 0
+while i >= 0:
+    rev = rev + s[i] # Add the current character to the reversed string 
+    # Move to the previous character
+    i -= 1
 
-# Replace a word in the string
-replaced_text = text.replace("Fun", "Awesome")
-print("Replaced Text:", replaced_text)
-
-# Combining methods: make all lowercase and replace 'python' with 'Java'
-combined_text = text.lower().replace("python", "java")
-print("Combined Methods:", combined_text)
+# Display the reversed result
+print(f"The number reversed is : {rev}")
