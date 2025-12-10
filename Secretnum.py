@@ -1,20 +1,21 @@
-# Mini Python program demonstrating lower(), upper(), and replace()
+# Guess the Secret Number Game
 
-# Original string
-text = "Hello Class! Python is Fun."
+#Program Description: The user must guess the secret number. The loop continues until they guess correctly, giving hints along the way.
 
-# Convert the string to all lowercase
-lower_text = text.lower()
-print("Lowercase:", lower_text)
+# The number the user has to guess
+secret = 7
 
-# Convert the string to all uppercase
-upper_text = text.upper()
-print("Uppercase:", upper_text)
+# Set the first guess to 0 (or any value not equal to secret)
+guess = 0
 
-# Replace a word in the string
-replaced_text = text.replace("Fun", "Awesome")
-print("Replaced Text:", replaced_text)
-
-# Combining methods: make all lowercase and replace 'python' with 'Java'
-combined_text = text.lower().replace("python", "java")
-print("Combined Methods:", combined_text)
+# Keep looping until the guess is equal to the secret number
+while guess != secret:
+    guess = int(input("Guess the secret number between 1 and 10: "))  # Ask for a guess
+    
+    # Check if the guess is too low, too high, or correct
+    if guess < secret:
+        print("Too low! Try again.")
+    elif guess > secret:
+        print("Too high! Try again.")
+    else:
+        print("🎉 You got it right!")
